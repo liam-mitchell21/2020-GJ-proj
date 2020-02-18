@@ -9,3 +9,8 @@ git add *file* ##adds file to commit
 git commit ##commits change to master
 
 git push ##pushes change to github
+
+
+I think I got it.
+
+.. maybe not
