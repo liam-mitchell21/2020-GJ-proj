@@ -1,81 +1,171 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
-[ext_resource path="res://test-sprites/phone-placeholder.jpeg" type="Texture" id=2]
+[ext_resource path="res://sounds/notify.wav" type="AudioStream" id=2]
+[ext_resource path="res://PHONE.gd" type="Script" id=3]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="time2work" type="Timer" parent="."]
+wait_time = 100.0
+one_shot = true
 
-[node name="MessageTimer" type="Timer" parent="."]
-
-[node name="latestMessage" type="Label" parent="."]
+[node name="PHONE" type="Panel" parent="."]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -172.0
-margin_top = -20.0
-margin_right = -73.0
-margin_bottom = -6.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TESTMESSAGE 2"
+margin_left = -200.0
+margin_top = -260.0
+margin_right = -10.0
+margin_bottom = 260.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="secondMessage" type="Label" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -172.0
-margin_top = 119.0
-margin_right = -69.0
-margin_bottom = 133.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TEST MESSAGE 1"
+[node name="MessageTimer" type="Timer" parent="PHONE"]
+wait_time = 4.0
+
+[node name="Notification" type="AudioStreamPlayer" parent="PHONE"]
+stream = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="PHONE"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 169.0
+margin_bottom = 65.0
+
+[node name="msg" type="Label" parent="PHONE/Panel"]
+margin_left = 22.0
+margin_top = -1.0
+margin_right = 148.0
+margin_bottom = 15.0
+text = "TIME UNTIL WORK: "
+
+[node name="time" type="Label" parent="PHONE/Panel"]
+margin_left = 44.7
+margin_top = 16.95
+margin_right = 71.7
+margin_bottom = 30.95
+rect_scale = Vector2( 3, 3 )
+text = "100"
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Reply" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -176.0
-margin_top = -172.0
-margin_right = -127.0
-margin_bottom = -152.0
-text = "\"YES!\""
+[node name="Panel2" type="Panel" parent="PHONE"]
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Reply2" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -123.0
-margin_top = -172.0
-margin_right = -70.0
-margin_bottom = -152.0
-text = "\"NO!!\""
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Reply3" type="Button" parent="."]
+[node name="Reply" type="Button" parent="PHONE/Panel2"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -160.0
-margin_top = -150.0
-margin_right = -85.0
-margin_bottom = -130.0
-text = "\"IGNORE\""
+margin_left = -13.0
+margin_top = 264.0
+margin_right = 130.0
+margin_bottom = 319.0
+text = "I will!"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reply2" type="Button" parent="PHONE/Panel2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -13.0
+margin_top = 333.0
+margin_right = 132.0
+margin_bottom = 382.0
+text = "New phone, who dis"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reply3" type="Button" parent="PHONE/Panel2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -11.0
+margin_top = 397.0
+margin_right = 131.0
+margin_bottom = 431.0
+text = "IGNORE"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="latestMessage" type="Label" parent="PHONE/Panel2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = 203.0
+margin_right = 134.0
+margin_bottom = 279.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Don't be late for work!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="secondMessage" type="Label" parent="PHONE/Panel2"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -26.0
+margin_top = 142.0
+margin_right = 127.0
+margin_bottom = 201.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "This is your phone"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="thirdMessage" type="Label" parent="PHONE/Panel2"]
+margin_left = 13.0
+margin_top = 73.0
+margin_right = 167.0
+margin_bottom = 138.0
+text = "Welcome!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PHONE/Panel2"]
+margin_left = 16.0
+margin_top = 206.0
+margin_right = 162.0
+margin_bottom = 220.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "NEW NOTIFICATION!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="PHONE/Panel2"]
+margin_left = 159.876
+margin_top = 206.0
+margin_right = 175.876
+margin_bottom = 220.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,10 +183,9 @@ text = "START"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 677, 299 )
-scale = Vector2( 1, 2.06429 )
-z_index = -1
-texture = ExtResource( 2 )
+[connection signal="filestuff" from="." to="PHONE" method="_on_HUD_filestuff"]
+[connection signal="timeout" from="PHONE/MessageTimer" to="PHONE" method="_on_MessageTimer_timeout"]
+[connection signal="pressed" from="PHONE/Panel2/Reply" to="." method="_on_Reply_pressed"]
+[connection signal="pressed" from="PHONE/Panel2/Reply2" to="." method="_on_Reply2_pressed"]
+[connection signal="pressed" from="PHONE/Panel2/Reply3" to="." method="_on_Reply3_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

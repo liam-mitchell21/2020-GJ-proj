@@ -45,7 +45,7 @@ func _process(delta):
 		$AnimatedSprite.flip_v = velocity.y > 0
 
 func _on_Player_body_entered(body):
-	print(body.get_name())
+	#print(body.get_name())
 	if "Peds" in body.get_name():
 		emit_signal("hit")
 		$Slowtimer.start()

@@ -62,6 +62,9 @@ position = Vector2( -232, 344 )
 [node name="Wall3" parent="." instance=ExtResource( 6 )]
 position = Vector2( -232, 576 )
 
+[node name="Wall18" parent="." instance=ExtResource( 6 )]
+position = Vector2( -334.771, 805.033 )
+
 [node name="Wall4" parent="." instance=ExtResource( 6 )]
 position = Vector2( -104, 808 )
 
@@ -77,6 +80,9 @@ position = Vector2( 592, 808 )
 [node name="Wall8" parent="." instance=ExtResource( 6 )]
 position = Vector2( 824, 808 )
 
+[node name="Wall19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1053.03, 808 )
+
 [node name="Wall9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 984, 576 )
 
@@ -89,19 +95,25 @@ position = Vector2( 984, 112 )
 [node name="Wall12" parent="." instance=ExtResource( 6 )]
 position = Vector2( 984, -120 )
 
+[node name="Wall20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 901.783, -354.906 )
+
 [node name="Wall13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 752, -272 )
+position = Vector2( 672.719, -357.153 )
 
 [node name="Wall14" parent="." instance=ExtResource( 6 )]
-position = Vector2( 520, -272 )
+position = Vector2( 446.592, -354.217 )
 
 [node name="Wall15" parent="." instance=ExtResource( 6 )]
-position = Vector2( 288, -272 )
+position = Vector2( 217.528, -354.217 )
 
 [node name="Wall16" parent="." instance=ExtResource( 6 )]
-position = Vector2( 56, -272 )
+position = Vector2( -11.5354, -357.154 )
+
+[node name="Wall21" parent="." instance=ExtResource( 6 )]
+position = Vector2( -240.569, -351.281 )
 
 [node name="Wall17" parent="." instance=ExtResource( 6 )]
-position = Vector2( -176, -120 )
+position = Vector2( -237.663, -120 )
 [connection signal="timeout" from="PedSpawner/PedTimer" to="." method="_on_PedTimer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]

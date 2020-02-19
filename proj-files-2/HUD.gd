@@ -1,27 +1,25 @@
 extends CanvasLayer
 
-signal replied
+signal replied1
+signal replied2
+signal replied3
 signal start_game
+signal filestuff
+
+func _ready():
+	emit_signal("filestuff")
+
+func _process(delta):
+	$PHONE/Panel/time.text = str($time2work.time_left)
 
 func _on_StartButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_game")
-
-func show_message(text):
-	$secondMessage.text = $latestMessage.text
-	$secondMessage.show()
-	
-	$latestMessage.text = text
-	$latestMessage.show()
-	
-	$Reply.text = "YES!"
-	$Reply.show()
-	
-	$time2work.start
+	$PHONE/MessageTimer.start()
+	$time2work.start()
+	$PHONE/Panel/time.text = str($time2work.time_left)
 
 func show_game_over():
-	show_message("You Lose")
-
 	yield($time2work, "timeout")
 
 	$secondMessage.text = "TRY AGAIN"
@@ -36,12 +34,11 @@ func show_game_over():
 	yield(get_tree().create_timer(1), "timeout")
 
 func _on_Reply_pressed():
-	emit_signal("replied")
+	emit_signal("replied1")
+	$PHONE/Panel2/Count.text = str(int($PHONE/Panel2/Count.text) - 1)
 func _on_Reply2_pressed():
-	emit_signal("replied")
+	emit_signal("replied2")
+	$PHONE/Panel2/Count.text = str(int($PHONE/Panel2/Count.text) - 1)
 func _on_Reply3_pressed():
-	emit_signal("replied")
-
-func _on_MessageTimer_timeout():
-	## WHERE WE GET NEW MSG
-	show_message("newtext")
+	emit_signal("replied3")
+	$PHONE/Panel2/Count.text = str(int($PHONE/Panel2/Count.text) - 1)
