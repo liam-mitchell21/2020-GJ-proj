@@ -16,13 +16,6 @@ func start(pos):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-		
-	if $Slowtimer.time_left > 0:
-		speed = 50
-	elif $Stoptimer.time_left > 0:
-		speed = -20
-	else:
-		speed = 300
 	
 	var velocity = Vector2.ZERO
 	velocity.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -33,6 +26,11 @@ func _process(delta):
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
+		
+	if $Slowtimer.time_left > 0:
+		speed = 50
+	else:
+		speed = 300
 		
 	position += velocity * delta
 
@@ -45,13 +43,7 @@ func _process(delta):
 		$AnimatedSprite.flip_v = velocity.y > 0
 
 func _on_Player_body_entered(body):
-	print(body.get_name())
+	#print(body.get_name())
 	if "Peds" in body.get_name():
 		emit_signal("hit")
 		$Slowtimer.start()
-	elif "Wall" in body.get_name():
-		$Stoptimer.start()
-
-func _on_Player_body_exited(body):
-	if "Wall" in body.get_name():
-		$Stoptimer.stop()
