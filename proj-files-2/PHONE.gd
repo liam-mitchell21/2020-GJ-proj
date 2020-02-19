@@ -3,7 +3,7 @@ extends Panel
 var masterlist = "res://texts/master-texts.csv"
 var totalcount = 0
 var shuff = [1]
-var shuffdex = 1
+var shuffdex = 0
 var file = ""
 var data = ""
 
@@ -19,8 +19,11 @@ func new_message(text, r1, r2, r3):
 	$Panel2/latestMessage.text = text
 	
 	$Panel2/Reply.text = r1
+	$Panel2/Reply.show()
 	$Panel2/Reply2.text = r2
+	$Panel2/Reply2.show()
 	$Panel2/Reply3.text = r3
+	$Panel2/Reply3.show()
 
 func sample(list,amt):
 	var shuffled = list.duplicate()
@@ -75,3 +78,37 @@ func _on_MessageTimer_timeout():
 		shuff = sample(index, index.size())
 		shuffdex = 1
 
+func write_rep_to_file(filename, linecont, replynum):
+	var output = {}
+	var f = File.new()
+	if(f.open(filename, f.READ_WRITE) == OK):
+		f.seek_end()
+		f.store_line(linecont + "," + replynum)
+	f.close()
+
+func _on_Reply_pressed():
+	emit_signal("replied1")
+	if totalcount > 0:
+		totalcount -= 1
+	$Panel2/Reply2.hide()
+	$Panel2/Reply3.hide()
+	if shuffdex > 0:
+		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply1")
+	
+func _on_Reply2_pressed():
+	emit_signal("replied2")
+	if totalcount > 0:
+		totalcount -= 1
+	$Panel2/Reply.hide()
+	$Panel2/Reply3.hide()
+	if shuffdex > 0:
+		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply2")
+	
+func _on_Reply3_pressed():
+	emit_signal("replied3")
+	if totalcount > 0:
+		totalcount -= 1
+	$Panel2/Reply.hide()
+	$Panel2/Reply2.hide()
+	if shuffdex > 0:
+		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply3")

@@ -3,3 +3,6 @@ Amy: We really need to talk,Ignore,Ignore,Ignore
 BANK: $41 left in your account,Apply for loan,OK,Ignore
 BANK: electric bill auto-withdraw successful,OK,Cancel auto-withdraw,Ignore
 Mom: When are you coming home to visit? We miss you,I have no days off yet,We can skype?,Ignore
+BANK: electric bill auto-withdraw successful,OK,Cancel auto-withdraw,Ignore,reply1
+BANK: electric bill auto-withdraw successful,OK,Cancel auto-withdraw,Ignore,reply1
+BANK: electric bill auto-withdraw successful,OK,Cancel auto-withdraw,Ignore,reply1

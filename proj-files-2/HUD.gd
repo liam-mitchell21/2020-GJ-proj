@@ -33,12 +33,3 @@ func show_game_over():
 
 	yield(get_tree().create_timer(1), "timeout")
 
-func _on_Reply_pressed():
-	emit_signal("replied1")
-	$PHONE/Panel2/Count.text = str(int($PHONE/Panel2/Count.text) - 1)
-func _on_Reply2_pressed():
-	emit_signal("replied2")
-	$PHONE/Panel2/Count.text = str(int($PHONE/Panel2/Count.text) - 1)
-func _on_Reply3_pressed():
-	emit_signal("replied3")
-	$PHONE/Panel2/Count.text = str(int($PHONE/Panel2/Count.text) - 1)
