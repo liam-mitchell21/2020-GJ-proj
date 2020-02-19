@@ -1,15 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player-test.tscn" type="PackedScene" id=2]
 [ext_resource path="res://test-sprites/river-bend.jpg" type="Texture" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Peds.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://DirectionTrigger.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 976, -48 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 1520, 14 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -27,24 +28,23 @@ offset = Vector2( 400, 300 )
 region_enabled = true
 region_rect = Rect2( -5.66089, 607.4, 2052.59, 922.409 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-mass = 0.5
-gravity_scale = 0.0
-
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 392, 576 )
 
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
 [node name="PedSpawner" type="Position2D" parent="."]
-position = Vector2( -112, 304 )
+position = Vector2( -80, 512 )
 
 [node name="PedTimer" type="Timer" parent="PedSpawner"]
 wait_time = 0.5
 
 [node name="PedPath" type="Path2D" parent="PedSpawner"]
+position = Vector2( 0, -14 )
 curve = SubResource( 1 )
 
 [node name="PedEnder" type="Position2D" parent="PedSpawner"]
-position = Vector2( 976, -48 )
+position = Vector2( 1519, 0 )
 
 [node name="PedOut" type="Area2D" parent="PedSpawner/PedEnder"]
 
@@ -54,66 +54,32 @@ shape = SubResource( 2 )
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Wall" parent="." instance=ExtResource( 6 )]
-position = Vector2( -232, 112 )
-
-[node name="Wall2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -232, 344 )
-
-[node name="Wall3" parent="." instance=ExtResource( 6 )]
-position = Vector2( -232, 576 )
-
-[node name="Wall18" parent="." instance=ExtResource( 6 )]
-position = Vector2( -334.771, 805.033 )
-
-[node name="Wall4" parent="." instance=ExtResource( 6 )]
-position = Vector2( -104, 808 )
-
-[node name="Wall5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 128, 808 )
-
-[node name="Wall6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 360, 808 )
-
-[node name="Wall7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 592, 808 )
+position = Vector2( 720, -136 )
 
 [node name="Wall8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 824, 808 )
+position = Vector2( -456, -656 )
 
-[node name="Wall19" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1053.03, 808 )
+[node name="Wall2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 440, 1224 )
 
-[node name="Wall9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 984, 576 )
+[node name="Wall3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -736, 520 )
 
-[node name="Wall10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 984, 344 )
+[node name="Wall4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1616, 1224 )
 
-[node name="Wall11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 984, 112 )
+[node name="Wall5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2032, 48 )
 
-[node name="Wall12" parent="." instance=ExtResource( 6 )]
-position = Vector2( 984, -120 )
+[node name="Wall6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2032, -136 )
 
-[node name="Wall20" parent="." instance=ExtResource( 6 )]
-position = Vector2( 901.783, -354.906 )
+[node name="Wall7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1136, -1416 )
 
-[node name="Wall13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 672.719, -357.153 )
-
-[node name="Wall14" parent="." instance=ExtResource( 6 )]
-position = Vector2( 446.592, -354.217 )
-
-[node name="Wall15" parent="." instance=ExtResource( 6 )]
-position = Vector2( 217.528, -354.217 )
-
-[node name="Wall16" parent="." instance=ExtResource( 6 )]
-position = Vector2( -11.5354, -357.154 )
-
-[node name="Wall21" parent="." instance=ExtResource( 6 )]
-position = Vector2( -240.569, -351.281 )
-
-[node name="Wall17" parent="." instance=ExtResource( 6 )]
-position = Vector2( -237.663, -120 )
+[node name="DirectionTrigger1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1376, -704 )
 [connection signal="timeout" from="PedSpawner/PedTimer" to="." method="_on_PedTimer_timeout"]
+[connection signal="ded" from="HUD" to="." method="_on_HUD_ded"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="area_entered" from="DirectionTrigger1" to="HUD" method="_on_DirectionTrigger1_area_entered"]

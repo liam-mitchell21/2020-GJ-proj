@@ -9,6 +9,12 @@ func _ready():
 func new_game():
 	$Player.start($StartPosition.position)
 	$PedSpawner/PedTimer.start()
+	
+	$HUD/PHONE/latestMessage.text = "or your boss might not be happy"
+	$HUD/PHONE/secondMessage.text = "try your best to be on-time"
+	$HUD/PHONE/thirdMessage.text = "Hello, and welcome"
+	$HUD/PHONE/msg.text = "TIME UNTIL WORK:"
+	$HUD/PHONE/Label.text = "NEW NOTIFICATION!"
 
 func _on_PedTimer_timeout():
 	# Create a Mob instance and add it to the scene.
@@ -22,3 +28,8 @@ func _on_PedTimer_timeout():
 	ped.linear_velocity = ped.linear_velocity.rotated(direction)
 	
 
+func _on_HUD_ded():
+	$HUD/StartButton.visible = true
+
+func _on_DirectionTrigger1_area_entered(area):
+	print(area.get_name())

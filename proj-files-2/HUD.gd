@@ -1,35 +1,53 @@
 extends CanvasLayer
 
-signal replied1
-signal replied2
-signal replied3
 signal start_game
 signal filestuff
+signal ded
 
 func _ready():
 	emit_signal("filestuff")
 
-func _process(delta):
-	$PHONE/Panel/time.text = str($time2work.time_left)
+func _process(_delta):
+	$PHONE/time.text = str($time2work.time_left)
 
 func _on_StartButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_game")
 	$PHONE/MessageTimer.start()
 	$time2work.start()
-	$PHONE/Panel/time.text = str($time2work.time_left)
+	$PHONE/time.text = str($time2work.time_left)
 
 func show_game_over():
-	yield($time2work, "timeout")
-
-	$secondMessage.text = "TRY AGAIN"
-	$secondMessage.show()
+	$PHONE/MessageTimer.stop()
 	
-	$latestMessage.text = "TRY AGAIN"
-	$latestMessage.show()
+	var losstext = "LOSE"
+
+	$PHONE/latestMessage.text = losstext
+	$PHONE/secondMessage.text = losstext
+	$PHONE/thirdMessage.text = losstext
+	$PHONE/Label.text = losstext
+
+	$Borrowedtime.start()
+
+
+func _on_Borrowedtime_timeout():
+	emit_signal("ded")
+
+func new_message(text, r1, r2, r3): #eugh duplicating the func
+	$PHONE/Notification.play()
+	$PHONE/thirdMessage.text = $PHONE/secondMessage.text
+	$PHONE/secondMessage.text = $PHONE/latestMessage.text
 	
-	$Reply3.text = "BEGIN"
-	$Reply3.show()
+	$PHONE/latestMessage.text = text
+	
+	$PHONE/Reply.text = r1
+	$PHONE/Reply.show()
+	$PHONE/Reply2.text = r2
+	$PHONE/Reply2.show()
+	$PHONE/Reply3.text = r3
+	$PHONE/Reply3.show()
 
-	yield(get_tree().create_timer(1), "timeout")
-
+func _on_DirectionTrigger1_area_entered(area):
+	if (area.get_name() == "Phitbox"):
+		$PHONE/MessageTimer.start()
+		new_message("GO LEFT", "Who are you", "Why", "OK")

@@ -1,4 +1,4 @@
-extends Panel
+extends Sprite
 
 var masterlist = "res://texts/master-texts.csv"
 var totalcount = 0
@@ -13,17 +13,19 @@ func _ready():
 	rng.randomize()
 
 func new_message(text, r1, r2, r3):
-	$Panel2/thirdMessage.text = $Panel2/secondMessage.text
-	$Panel2/secondMessage.text = $Panel2/latestMessage.text
+	$Notification.play()
 	
-	$Panel2/latestMessage.text = text
+	$thirdMessage.text = $secondMessage.text
+	$secondMessage.text = $latestMessage.text
 	
-	$Panel2/Reply.text = r1
-	$Panel2/Reply.show()
-	$Panel2/Reply2.text = r2
-	$Panel2/Reply2.show()
-	$Panel2/Reply3.text = r3
-	$Panel2/Reply3.show()
+	$latestMessage.text = text
+	
+	$Reply.text = r1
+	$Reply.show()
+	$Reply2.text = r2
+	$Reply2.show()
+	$Reply3.text = r3
+	$Reply3.show()
 
 func sample(list,amt):
 	var shuffled = list.duplicate()
@@ -60,12 +62,13 @@ func read_file(filename):
 
 func _on_MessageTimer_timeout():
 	var newtime = $MessageTimer.wait_time + rng.randf_range(-1, 1)
+	if newtime < 0:
+		newtime += 1
 	$MessageTimer.wait_time = newtime
 	
-	$Notification.play()
 	totalcount += 1
 	#print(totalcount)
-	$Panel2/Count.text = str(totalcount)
+	$Count.text = str(totalcount)
 	
 	var ln = str(shuff[shuffdex])
 	#print(ln)
@@ -79,7 +82,6 @@ func _on_MessageTimer_timeout():
 		shuffdex = 1
 
 func write_rep_to_file(filename, linecont, replynum):
-	var output = {}
 	var f = File.new()
 	if(f.open(filename, f.READ_WRITE) == OK):
 		f.seek_end()
@@ -87,7 +89,6 @@ func write_rep_to_file(filename, linecont, replynum):
 	f.close()
 
 func _on_Reply_pressed():
-	emit_signal("replied1")
 	if totalcount > 0:
 		totalcount -= 1
 	$Panel2/Reply2.hide()
@@ -96,7 +97,6 @@ func _on_Reply_pressed():
 		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply1")
 	
 func _on_Reply2_pressed():
-	emit_signal("replied2")
 	if totalcount > 0:
 		totalcount -= 1
 	$Panel2/Reply.hide()
@@ -105,7 +105,6 @@ func _on_Reply2_pressed():
 		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply2")
 	
 func _on_Reply3_pressed():
-	emit_signal("replied3")
 	if totalcount > 0:
 		totalcount -= 1
 	$Panel2/Reply.hide()
