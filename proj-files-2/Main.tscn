@@ -133,7 +133,7 @@ rotation = 4.71239
 Peds = ExtResource( 5 )
 
 [node name="PedLine3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -1000, 1000 )
+position = Vector2( -994.838, 1010.32 )
 Peds = ExtResource( 5 )
 
 [node name="PedLine4" parent="." instance=ExtResource( 8 )]
@@ -216,132 +216,6 @@ position = Vector2( 42, 3694 )
 
 [node name="Wall" parent="." instance=ExtResource( 6 )]
 position = Vector2( 396.97, -524.603 )
-
-[node name="Wall8" parent="." instance=ExtResource( 6 )]
-position = Vector2( -456, 1776 )
-
-[node name="Wall2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -474.136, 360.672 )
-
-[node name="Wall3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1283.08, 353.083 )
-
-[node name="Wall4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2152, 1792 )
-
-[node name="Wall5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 712, 2960 )
-
-[node name="Wall6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 711.737, 1790.23 )
-
-[node name="Wall7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1888, 3224 )
-
-[node name="Wall9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3056, 3224 )
-
-[node name="Wall20" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3568, 3224 )
-
-[node name="Wall21" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3712, 3344 )
-
-[node name="Wall10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3576, 2056 )
-
-[node name="Wall11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2742, 624 )
-
-[node name="Wall34" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2296, -632 )
-
-[node name="Wall35" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3552, -616 )
-
-[node name="Wall36" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4720, -504 )
-
-[node name="Wall37" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3040, -1832 )
-
-[node name="Wall38" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2296, -1328 )
-
-[node name="Wall12" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4168, 638 )
-
-[node name="Wall13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6464, 1256 )
-
-[node name="Wall19" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5304, 640 )
-
-[node name="Wall14" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6472, 2424 )
-
-[node name="Wall15" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6480, 3592 )
-
-[node name="Wall16" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6504, 4744 )
-
-[node name="Wall17" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5312, 4744 )
-
-[node name="Wall18" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4144, 4752 )
-
-[node name="Wall22" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2986, 4608 )
-
-[node name="Wall23" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1816, 4760 )
-
-[node name="Wall24" parent="." instance=ExtResource( 6 )]
-position = Vector2( 632, 4760 )
-
-[node name="Wall25" parent="." instance=ExtResource( 6 )]
-position = Vector2( 96, 4416 )
-
-[node name="Wall39" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1344, 4280 )
-
-[node name="Wall40" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1358, 4280 )
-
-[node name="Wall41" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1358, 5440 )
-
-[node name="Wall42" parent="." instance=ExtResource( 6 )]
-position = Vector2( -192, 6240 )
-
-[node name="Wall43" parent="." instance=ExtResource( 6 )]
-position = Vector2( 976, 5912 )
-
-[node name="Wall26" parent="." instance=ExtResource( 6 )]
-position = Vector2( -640, 3104 )
-
-[node name="Wall27" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1792, 3104 )
-
-[node name="Wall28" parent="." instance=ExtResource( 6 )]
-position = Vector2( -2640, 1928 )
-
-[node name="Wall29" parent="." instance=ExtResource( 6 )]
-position = Vector2( -2648, 760 )
-
-[node name="Wall30" parent="." instance=ExtResource( 6 )]
-position = Vector2( -2664, -416 )
-
-[node name="Wall31" parent="." instance=ExtResource( 6 )]
-position = Vector2( -768, -768 )
-
-[node name="Wall33" parent="." instance=ExtResource( 6 )]
-position = Vector2( -768, -768 )
-
-[node name="Wall32" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1744, -984 )
 [connection signal="ded" from="HUD" to="." method="_on_HUD_ded"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="crash" from="Player" to="." method="_on_Player_crash"]
