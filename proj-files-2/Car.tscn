@@ -1,17 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://sprites/car.png" type="Texture" id=1]
+[ext_resource path="res://sprites/light.png" type="Texture" id=1]
 [ext_resource path="res://sprites/anger-symbol_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/car.svg.png" type="Texture" id=3]
 [ext_resource path="res://sprites/anger-symbol_2.png" type="Texture" id=4]
 [ext_resource path="res://Car.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 64 )
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -364.899, -812.474, -284.706, -818.643, -278.537, -781.63, -179.837, -787.799, -186.006, -830.981, 177.95, -837.151, 171.781, -787.801, 288.987, -787.801, 288.987, -843.32, 363.012, -824.814, 363.018, 822.239, -358.725, 822.242 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 40, 64 )
+extents = Vector2( 36.3015, 81.8644 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 36.3012, 81.2476 )
+
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
@@ -28,13 +32,16 @@ script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 1.5708
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+occluder = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-scale = Vector2( 3, 3 )
-shape = SubResource( 1 )
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
@@ -42,15 +49,27 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
-scale = Vector2( 3, 3 )
-shape = SubResource( 2 )
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 3 )
 
 [node name="Angry" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -16, -10 )
+position = Vector2( 48, -56 )
 scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 playing = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 239.349, 73.1013 )
+texture = ExtResource( 1 )
+color = Color( 0.905882, 0.937255, 0.388235, 1 )
+energy = 2.0
+shadow_enabled = true
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 236.879, -72.1743 )
+texture = ExtResource( 1 )
+color = Color( 0.905882, 0.937255, 0.388235, 1 )
+shadow_enabled = true
 [connection signal="body_entered" from="." to="." method="_on_Car_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Car_body_exited"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

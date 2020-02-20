@@ -154,10 +154,6 @@ position = Vector2( 438.774, -438.819 )
 [node name="CarLine2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 760.768, -2151.28 )
 
-[node name="CarLine3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 4438.42, -2315.48 )
-rotation = 3.14159
-
 [node name="Car" parent="." instance=ExtResource( 14 )]
 position = Vector2( -1704.81, 2320.1 )
 rotation = 4.66003
