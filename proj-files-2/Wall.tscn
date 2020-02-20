@@ -6,15 +6,14 @@
 extents = Vector2( 334.336, 238.88 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 543.102, -2868.31, 3866.54, -2884.29, 3890.5, -511.546, 559.08, -527.524 )
+polygon = PoolVector2Array( 543.102, -2868.31, 3889.95, -2865.18, 3893.47, -500.884, 546.136, -500.884 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 4961.16, -2874.67, 8256.91, -2861.32, 8283.6, -526.277, 4961.16, -499.591 )
+polygon = PoolVector2Array( 4902.61, -2884.53, 8258.29, -2884.81, 8252.42, -516.471, 4894.6, -515.007 )
 
 [node name="Wall" type="StaticBody2D"]
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -110,6 +109,7 @@ scale = Vector2( 5, 5 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( -12.6317, -18.9475 )
 occluder = SubResource( 2 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
@@ -117,7 +117,7 @@ position = Vector2( 4, -6 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
-position = Vector2( 0, 3385.46 )
+position = Vector2( -5.16943, 3421.65 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D13" type="LightOccluder2D" parent="."]
@@ -125,7 +125,7 @@ position = Vector2( 41.2422, 6849.78 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D14" type="LightOccluder2D" parent="."]
-position = Vector2( -4402.32, 6837.73 )
+position = Vector2( -4369.66, 6842.4 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D15" type="LightOccluder2D" parent="."]
@@ -133,41 +133,41 @@ position = Vector2( -8797.71, 6849.78 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D16" type="LightOccluder2D" parent="."]
-position = Vector2( -13241.3, 6861.82 )
+position = Vector2( -13196, 6856.79 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
-position = Vector2( -4399.79, 3438 )
+position = Vector2( -4369.58, 3417.86 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D7" type="LightOccluder2D" parent="."]
-position = Vector2( -4406.52, -3379.72 )
+position = Vector2( -4372, -3422.08 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D11" type="LightOccluder2D" parent="."]
-position = Vector2( -8811.19, -3419.95 )
+position = Vector2( -8783.82, -3419.95 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D12" type="LightOccluder2D" parent="."]
-position = Vector2( -13195.7, -3440.06 )
+position = Vector2( -13200.3, -3423.04 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D10" type="LightOccluder2D" parent="."]
-position = Vector2( 18.2559, -3440.06 )
+position = Vector2( 45.3882, -3412.93 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D8" type="LightOccluder2D" parent="."]
-position = Vector2( -13239.6, 25.4895 )
+position = Vector2( -13193.3, -1.71808 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
-position = Vector2( -8822.9, 3447.76 )
+position = Vector2( -8774.78, 3432.95 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D9" type="LightOccluder2D" parent="."]
-position = Vector2( -13233.7, 3447.76 )
+position = Vector2( -13198.4, 3424.24 )
 occluder = SubResource( 3 )
 
 [node name="LightOccluder2D6" type="LightOccluder2D" parent="."]
-position = Vector2( -8821.2, 7.36987 )
+position = Vector2( -8786.9, 5.65527 )
 occluder = SubResource( 3 )
