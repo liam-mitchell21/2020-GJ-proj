@@ -61,3 +61,7 @@ func _on_DirectionTrigger3_area_entered(area):
 	if (area.get_name() == "Phitbox"):
 		$PHONE/MessageTimer.start()
 		new_message("GO NORTH", "...", "...", "OK")
+
+
+func _on_Power_pressed():
+	get_tree().quit()

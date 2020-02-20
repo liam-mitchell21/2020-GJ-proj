@@ -18,14 +18,14 @@ wait_time = 3.0
 one_shot = true
 
 [node name="PHONE" type="Sprite" parent="."]
-position = Vector2( 521.645, 2.70752 )
+position = Vector2( 984, 64 )
 scale = Vector2( 0.341711, 0.341711 )
 texture = ExtResource( 4 )
 centered = false
 script = ExtResource( 3 )
 
 [node name="MessageTimer" type="Timer" parent="PHONE"]
-wait_time = 3.0
+wait_time = 4.0
 
 [node name="Notification" type="AudioStreamPlayer" parent="PHONE"]
 stream = ExtResource( 2 )
@@ -83,10 +83,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -767.622
-margin_top = -31.8709
-margin_right = -40.6224
-margin_bottom = 258.129
+margin_left = -768.0
+margin_top = -55.5
+margin_right = -41.0
+margin_bottom = 257.5
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Don't be late for work!"
@@ -98,10 +98,10 @@ __meta__ = {
 [node name="secondMessage" type="Label" parent="PHONE"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -765.927
-margin_top = 517.678
-margin_right = -99.9265
-margin_bottom = 706.678
+margin_left = -766.0
+margin_top = 492.0
+margin_right = -100.0
+margin_bottom = 749.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "This is your phone"
@@ -112,9 +112,9 @@ __meta__ = {
 
 [node name="thirdMessage" type="Label" parent="PHONE"]
 margin_left = 41.0
-margin_top = 269.0
+margin_top = 252.147
 margin_right = 724.0
-margin_bottom = 516.0
+margin_bottom = 462.147
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Welcome!"
@@ -125,9 +125,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="PHONE"]
 margin_left = 37.1559
-margin_top = 739.513
+margin_top = 742.439
 margin_right = 662.156
-margin_bottom = 858.513
+margin_bottom = 861.439
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "NEW NOTIFICATION!"
@@ -162,7 +162,7 @@ __meta__ = {
 [node name="time" type="Label" parent="PHONE"]
 margin_left = 551.0
 margin_top = 161.0
-margin_right = 671.0
+margin_right = 679.0
 margin_bottom = 257.0
 grow_horizontal = 2
 custom_fonts/font = ExtResource( 5 )
@@ -173,23 +173,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Power" type="Button" parent="PHONE"]
+margin_left = 328.0
+margin_top = 1592.0
+margin_right = 445.0
+margin_bottom = 1686.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartButton" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -400.0
-margin_top = -300.0
-margin_right = 400.0
-margin_bottom = 300.0
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 custom_fonts/font = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="StartButton"]
-margin_right = 800.0
-margin_bottom = 600.0
+margin_right = 1280.0
+margin_bottom = 720.0
 custom_fonts/font = ExtResource( 5 )
 text = "START"
 align = 1
@@ -205,4 +216,5 @@ __meta__ = {
 [connection signal="pressed" from="PHONE/Reply" to="PHONE" method="_on_Reply_pressed"]
 [connection signal="pressed" from="PHONE/Reply2" to="PHONE" method="_on_Reply2_pressed"]
 [connection signal="pressed" from="PHONE/Reply3" to="PHONE" method="_on_Reply3_pressed"]
+[connection signal="pressed" from="PHONE/Power" to="." method="_on_Power_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

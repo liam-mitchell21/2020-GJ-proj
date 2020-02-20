@@ -62,7 +62,7 @@ func read_file(filename):
 
 func _on_MessageTimer_timeout():
 	var newtime = $MessageTimer.wait_time + rng.randf_range(-1, 1)
-	if newtime < 0:
+	if newtime < 1:
 		newtime += 1
 	$MessageTimer.wait_time = newtime
 	
@@ -91,23 +91,23 @@ func write_rep_to_file(filename, linecont, replynum):
 func _on_Reply_pressed():
 	if totalcount > 0:
 		totalcount -= 1
-	$Panel2/Reply2.hide()
-	$Panel2/Reply3.hide()
+	$Reply2.hide()
+	$Reply3.hide()
 	if shuffdex > 0:
 		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply1")
 	
 func _on_Reply2_pressed():
 	if totalcount > 0:
 		totalcount -= 1
-	$Panel2/Reply.hide()
-	$Panel2/Reply3.hide()
+	$Reply.hide()
+	$Reply3.hide()
 	if shuffdex > 0:
 		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply2")
 	
 func _on_Reply3_pressed():
 	if totalcount > 0:
 		totalcount -= 1
-	$Panel2/Reply.hide()
-	$Panel2/Reply2.hide()
+	$Reply.hide()
+	$Reply2.hide()
 	if shuffdex > 0:
 		write_rep_to_file(file, data[str(shuff[shuffdex-1])], "reply3")

@@ -70,12 +70,9 @@ position = Vector2( 396.97, 568 )
 position = Vector2( 2144, 1072 )
 
 [node name="PedOut9" parent="." instance=ExtResource( 9 )]
-position = Vector2( 6944, 5504 )
-
-[node name="PedOut10" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3000, 5200 )
+position = Vector2( 1952, 1202 )
 rotation = 1.5708
-scale = Vector2( 3, 4 )
+scale = Vector2( 1, 3 )
 
 [node name="PedOut11" parent="." instance=ExtResource( 9 )]
 position = Vector2( -632, 3704 )
@@ -320,25 +317,7 @@ position = Vector2( -1358, 5440 )
 position = Vector2( -192, 6240 )
 
 [node name="Wall43" parent="." instance=ExtResource( 6 )]
-position = Vector2( 968, 6264 )
-
-[node name="Wall44" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2128, 6264 )
-
-[node name="Wall45" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3312, 6256 )
-
-[node name="Wall46" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4480, 6256 )
-
-[node name="Wall47" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5648, 6256 )
-
-[node name="Wall48" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6808, 6248 )
-
-[node name="Wall49" parent="." instance=ExtResource( 6 )]
-position = Vector2( 7536, 5360 )
+position = Vector2( 976, 5912 )
 
 [node name="Wall26" parent="." instance=ExtResource( 6 )]
 position = Vector2( -640, 3104 )
