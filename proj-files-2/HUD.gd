@@ -47,21 +47,45 @@ func new_message(text, r1, r2, r3): #eugh duplicating the func
 	$PHONE/Reply3.text = r3
 	$PHONE/Reply3.show()
 
+func _on_Power_pressed():
+	get_tree().quit()
+
+
 func _on_DirectionTrigger1_area_entered(area):
 	if (area.get_name() == "Phitbox"):
 		$PHONE/MessageTimer.start()
-		new_message("GO SOUTH", "Who are you", "Why", "OK")
+		new_message("GO EAST", "Who are you", "Why", "OK")
 
 func _on_DirectionTrigger2_area_entered(area):
 	if (area.get_name() == "Phitbox"):
 		$PHONE/MessageTimer.start()
-		new_message("GO EAST", "How did you get this #", "...", "OK")
+		new_message("GO NORTH", "How did you get this #", "...", "OK")
 
 func _on_DirectionTrigger3_area_entered(area):
 	if (area.get_name() == "Phitbox"):
 		$PHONE/MessageTimer.start()
-		new_message("GO NORTH", "...", "...", "OK")
+		new_message("CONTINUE NORTH", "...", "...", "OK")
 
 
-func _on_Power_pressed():
-	get_tree().quit()
+func _on_DirectionTrigger4_area_entered(area):
+	if (area.get_name() == "Phitbox"):
+		$PHONE/MessageTimer.start()
+		new_message("GO WEST", "...", "...", "OK")
+
+
+func _on_DirectionTrigger5_area_entered(area):
+	if (area.get_name() == "Phitbox"):
+		$PHONE/MessageTimer.start()
+		new_message("CONTINUE WEST", "...", "...", "OK")
+
+
+func _on_DirectionTrigger6_area_entered(area):
+	if (area.get_name() == "Phitbox"):
+		$PHONE/MessageTimer.start()
+		new_message("GO SOUTH", "What?", "Who is this?", "OK")
+
+
+func _on_DirectionTrigger7_area_entered(area):
+	if (area.get_name() == "Phitbox"):
+		$PHONE/MessageTimer.start()
+		new_message("LOOK NORTH", "...", "...", "OK")

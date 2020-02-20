@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player-test.tscn" type="PackedScene" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://CarLine.tscn" type="PackedScene" id=10]
 [ext_resource path="res://CarOut.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PedOutBig.tscn" type="PackedScene" id=12]
-[ext_resource path="res://sprites/road.png" type="Texture" id=13]
 [ext_resource path="res://Car.tscn" type="PackedScene" id=14]
 [ext_resource path="res://worksign.tscn" type="PackedScene" id=15]
 
@@ -20,67 +19,49 @@
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 42, -16 )
-scale = Vector2( 10, 10 )
+position = Vector2( -3121.74, -3193.89 )
+scale = Vector2( 8.99143, 8.99143 )
 z_index = -2
 texture = ExtResource( 3 )
 offset = Vector2( 400, 300 )
 region_enabled = true
 region_rect = Rect2( -5.66089, 607.4, 2052.59, 922.409 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 5160, 2696 )
-scale = Vector2( 5, 7.72105 )
-texture = ExtResource( 13 )
-
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( -1920, 1056 )
-scale = Vector2( 5, 7.72105 )
-texture = ExtResource( 13 )
-
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 393.679, 572.624 )
+position = Vector2( 605.334, 815.253 )
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 392, 576 )
+position = Vector2( 603.655, 813.467 )
 
 [node name="Worksign" parent="." instance=ExtResource( 15 )]
-position = Vector2( -1160, -216 )
+position = Vector2( -321.678, -2531.61 )
 z_index = 1
 
-[node name="CarOut" parent="." instance=ExtResource( 11 )]
-position = Vector2( 4824, 4296 )
-
-[node name="CarOut2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 6264, 2776 )
+[node name="CarOut3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5392.76, -1230.86 )
 rotation = 1.5708
 scale = Vector2( 3, 3 )
 
-[node name="CarOut3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 3624, 2928 )
+[node name="CarOut4" parent="." instance=ExtResource( 11 )]
+position = Vector2( -2770.73, -1254.32 )
 rotation = 1.5708
 scale = Vector2( 3, 3 )
 
 [node name="PedOutBig" parent="." instance=ExtResource( 12 )]
-position = Vector2( 396.97, 568 )
+position = Vector2( 402.132, 614.461 )
 
 [node name="PedOut" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2144, 1072 )
+position = Vector2( 2816.7, 813.27 )
+rotation = 1.5708
 
 [node name="PedOut9" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1952, 1202 )
-rotation = 1.5708
+position = Vector2( 2278.82, 1217.56 )
 scale = Vector2( 1, 3 )
 
-[node name="PedOut11" parent="." instance=ExtResource( 9 )]
-position = Vector2( -632, 3704 )
-rotation = 1.5708
-scale = Vector2( 3, 4 )
-
 [node name="PedOut12" parent="." instance=ExtResource( 9 )]
-position = Vector2( -520, 1208 )
+position = Vector2( -533.977, 1468.9 )
 rotation = 1.5708
 scale = Vector2( 3, 4 )
 
@@ -100,19 +81,18 @@ rotation = 1.5708
 position = Vector2( 2016, 34 )
 rotation = 1.5708
 
-[node name="PedOut3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4336, 4154 )
-rotation = 1.5708
-
 [node name="PedOut7" parent="." instance=ExtResource( 9 )]
 position = Vector2( 4152, 2104 )
 scale = Vector2( 5, 5 )
 
 [node name="PedOut4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3112, 3912 )
+position = Vector2( 707.523, -240.121 )
 
 [node name="PedOut5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 752.712, 4120 )
+position = Vector2( 4494.31, -278.434 )
+
+[node name="PedOut10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2195.4, -1955.7 )
 
 [node name="PedLine1" parent="." instance=ExtResource( 8 )]
 position = Vector2( -1202, 2464 )
@@ -120,7 +100,7 @@ rotation = 4.71239
 Peds = ExtResource( 5 )
 
 [node name="PedLine7" parent="." instance=ExtResource( 8 )]
-position = Vector2( -1000, 1136 )
+position = Vector2( -1461.24, 1406.22 )
 Peds = ExtResource( 5 )
 
 [node name="PedLine8" parent="." instance=ExtResource( 8 )]
@@ -128,12 +108,12 @@ position = Vector2( 1354, 2520 )
 Peds = ExtResource( 5 )
 
 [node name="PedLine2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2088, 904 )
+position = Vector2( 2819.84, 1709.76 )
 rotation = 4.71239
 Peds = ExtResource( 5 )
 
 [node name="PedLine3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -994.838, 1010.32 )
+position = Vector2( -1460.74, 991.684 )
 Peds = ExtResource( 5 )
 
 [node name="PedLine4" parent="." instance=ExtResource( 8 )]
@@ -142,7 +122,11 @@ rotation = 1.5708
 Peds = ExtResource( 5 )
 
 [node name="PedLine5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 769.044, 3904 )
+position = Vector2( 2962.4, -306.768 )
+Peds = ExtResource( 5 )
+
+[node name="PedLine12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 757.314, -2019.22 )
 Peds = ExtResource( 5 )
 
 [node name="PedLine10" parent="." instance=ExtResource( 8 )]
@@ -155,64 +139,129 @@ rotation = 1.5708
 Peds = ExtResource( 5 )
 
 [node name="PedLine6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2328, 4088 )
+position = Vector2( 2292.81, -310.434 )
+rotation = 3.14159
+Peds = ExtResource( 5 )
+
+[node name="PedLine11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3043.48, -2011.16 )
 rotation = 3.14159
 Peds = ExtResource( 5 )
 
 [node name="CarLine" parent="." instance=ExtResource( 10 )]
-position = Vector2( 4824, 1408 )
-rotation = 1.5708
+position = Vector2( 438.774, -438.819 )
+
+[node name="CarLine2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 760.768, -2151.28 )
+
+[node name="CarLine3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4438.42, -2315.48 )
+rotation = 3.14159
 
 [node name="Car" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1408, 2320 )
+position = Vector2( -1704.81, 2320.1 )
 rotation = 4.66003
 mode = 1
 min_speed = 0
 max_speed = 0
 
 [node name="Car2" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1400, 1920 )
+position = Vector2( -1696.81, 1920.1 )
 rotation = 4.71239
 mode = 1
 min_speed = 0
 max_speed = 0
 
 [node name="Car3" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1400, 1448 )
+position = Vector2( -1696.81, 1448.1 )
 rotation = 4.7473
 mode = 1
 min_speed = 0
 max_speed = 0
 
 [node name="Car4" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1416, 1008 )
+position = Vector2( -1712.81, 1008.1 )
 rotation = 4.88692
 mode = 1
 min_speed = 0
 max_speed = 0
 
 [node name="Car5" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1424, 437.671 )
+position = Vector2( -1720.81, 437.775 )
 rotation = 4.36332
 mode = 1
 min_speed = 0
 max_speed = 0
 
 [node name="Car6" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1464, 2.70755 )
+position = Vector2( -1760.81, 2.81125 )
+rotation = 4.62512
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car12" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1718.49, -443.319 )
+rotation = 4.66003
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car11" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1710.49, -843.319 )
+rotation = 4.71239
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car10" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1710.49, -1315.32 )
+rotation = 4.7473
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car9" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1726.49, -1755.32 )
+rotation = 4.88692
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car8" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1734.49, -2325.65 )
+rotation = 4.36332
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car7" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1774.49, -2760.61 )
 rotation = 4.62512
 mode = 1
 min_speed = 0
 max_speed = 0
 
 [node name="DirectionTrigger1" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1424, 1080 )
+position = Vector2( 426.401, 1254.61 )
+
+[node name="DirectionTrigger6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 372.211, 327.366 )
 
 [node name="DirectionTrigger2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3440, 1344 )
+position = Vector2( 2560.32, 1196.15 )
 
 [node name="DirectionTrigger3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 42, 3694 )
+position = Vector2( 2605.57, -531.478 )
+
+[node name="DirectionTrigger4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2594.99, -2235.75 )
+
+[node name="DirectionTrigger5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 366.449, -2235.75 )
+
+[node name="DirectionTrigger7" parent="." instance=ExtResource( 7 )]
+position = Vector2( -288.823, -2244.38 )
 
 [node name="Wall" parent="." instance=ExtResource( 6 )]
 position = Vector2( 396.97, -524.603 )
@@ -221,5 +270,9 @@ position = Vector2( 396.97, -524.603 )
 [connection signal="crash" from="Player" to="." method="_on_Player_crash"]
 [connection signal="win" from="Player" to="." method="_on_Player_win"]
 [connection signal="area_entered" from="DirectionTrigger1" to="HUD" method="_on_DirectionTrigger1_area_entered"]
+[connection signal="area_entered" from="DirectionTrigger6" to="HUD" method="_on_DirectionTrigger6_area_entered"]
 [connection signal="area_entered" from="DirectionTrigger2" to="HUD" method="_on_DirectionTrigger2_area_entered"]
 [connection signal="area_entered" from="DirectionTrigger3" to="HUD" method="_on_DirectionTrigger3_area_entered"]
+[connection signal="area_entered" from="DirectionTrigger4" to="HUD" method="_on_DirectionTrigger4_area_entered"]
+[connection signal="area_entered" from="DirectionTrigger5" to="HUD" method="_on_DirectionTrigger5_area_entered"]
+[connection signal="area_entered" from="DirectionTrigger7" to="HUD" method="_on_DirectionTrigger7_area_entered"]
