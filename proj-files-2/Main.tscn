@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player-test.tscn" type="PackedScene" id=2]
@@ -7,79 +7,366 @@
 [ext_resource path="res://Peds.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://DirectionTrigger.tscn" type="PackedScene" id=7]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 1520, 14 )
-}
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 128 )
+[ext_resource path="res://PedLine.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PedOut.tscn" type="PackedScene" id=9]
+[ext_resource path="res://CarLine.tscn" type="PackedScene" id=10]
+[ext_resource path="res://CarOut.tscn" type="PackedScene" id=11]
+[ext_resource path="res://PedOutBig.tscn" type="PackedScene" id=12]
+[ext_resource path="res://sprites/road.png" type="Texture" id=13]
+[ext_resource path="res://Car.tscn" type="PackedScene" id=14]
+[ext_resource path="res://worksign.tscn" type="PackedScene" id=15]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-Peds = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -16 )
+position = Vector2( 42, -16 )
+scale = Vector2( 10, 10 )
 z_index = -2
 texture = ExtResource( 3 )
 offset = Vector2( 400, 300 )
 region_enabled = true
 region_rect = Rect2( -5.66089, 607.4, 2052.59, 922.409 )
 
-[node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 392, 576 )
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 5160, 2696 )
+scale = Vector2( 5, 7.72105 )
+texture = ExtResource( 13 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-
-[node name="PedSpawner" type="Position2D" parent="."]
-position = Vector2( -80, 512 )
-
-[node name="PedTimer" type="Timer" parent="PedSpawner"]
-wait_time = 0.5
-
-[node name="PedPath" type="Path2D" parent="PedSpawner"]
-position = Vector2( 0, -14 )
-curve = SubResource( 1 )
-
-[node name="PedEnder" type="Position2D" parent="PedSpawner"]
-position = Vector2( 1519, 0 )
-
-[node name="PedOut" type="Area2D" parent="PedSpawner/PedEnder"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PedSpawner/PedEnder/PedOut"]
-shape = SubResource( 2 )
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -1920, 1056 )
+scale = Vector2( 5, 7.72105 )
+texture = ExtResource( 13 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
-[node name="Wall" parent="." instance=ExtResource( 6 )]
-position = Vector2( 720, -136 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393.679, 572.624 )
 
-[node name="Wall8" parent="." instance=ExtResource( 6 )]
-position = Vector2( -456, -656 )
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 392, 576 )
 
-[node name="Wall2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 440, 1224 )
+[node name="Worksign" parent="." instance=ExtResource( 15 )]
+position = Vector2( -1160, -216 )
+z_index = 1
 
-[node name="Wall3" parent="." instance=ExtResource( 6 )]
-position = Vector2( -736, 520 )
+[node name="CarOut" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4824, 4296 )
 
-[node name="Wall4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1616, 1224 )
+[node name="CarOut2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6264, 2776 )
+rotation = 1.5708
+scale = Vector2( 3, 3 )
 
-[node name="Wall5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2032, 48 )
+[node name="CarOut3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 3624, 2928 )
+rotation = 1.5708
+scale = Vector2( 3, 3 )
 
-[node name="Wall6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2032, -136 )
+[node name="PedOutBig" parent="." instance=ExtResource( 12 )]
+position = Vector2( 396.97, 568 )
 
-[node name="Wall7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1136, -1416 )
+[node name="PedOut" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2144, 1072 )
+
+[node name="PedOut9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6944, 5504 )
+
+[node name="PedOut10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3000, 5200 )
+rotation = 1.5708
+scale = Vector2( 3, 4 )
+
+[node name="PedOut11" parent="." instance=ExtResource( 9 )]
+position = Vector2( -632, 3704 )
+rotation = 1.5708
+scale = Vector2( 3, 4 )
+
+[node name="PedOut12" parent="." instance=ExtResource( 9 )]
+position = Vector2( -520, 1208 )
+rotation = 1.5708
+scale = Vector2( 3, 4 )
+
+[node name="PedOut13" parent="." instance=ExtResource( 9 )]
+position = Vector2( -512, 928 )
+rotation = 1.5708
+scale = Vector2( 3, 4 )
+
+[node name="PedOut8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2968, 2528 )
+
+[node name="PedOut6" parent="." instance=ExtResource( 9 )]
+position = Vector2( -1184, -168 )
+rotation = 1.5708
+
+[node name="PedOut2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2016, 34 )
+rotation = 1.5708
+
+[node name="PedOut3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4336, 4154 )
+rotation = 1.5708
+
+[node name="PedOut7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4152, 2104 )
+scale = Vector2( 5, 5 )
+
+[node name="PedOut4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3112, 3912 )
+
+[node name="PedOut5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 752.712, 4120 )
+
+[node name="PedLine1" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1202, 2464 )
+rotation = 4.71239
+Peds = ExtResource( 5 )
+
+[node name="PedLine7" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1000, 1136 )
+Peds = ExtResource( 5 )
+
+[node name="PedLine8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1354, 2520 )
+Peds = ExtResource( 5 )
+
+[node name="PedLine2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2088, 904 )
+rotation = 4.71239
+Peds = ExtResource( 5 )
+
+[node name="PedLine3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1000, 1000 )
+Peds = ExtResource( 5 )
+
+[node name="PedLine4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 4336, 1336 )
+rotation = 1.5708
+Peds = ExtResource( 5 )
+
+[node name="PedLine5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 769.044, 3904 )
+Peds = ExtResource( 5 )
+
+[node name="PedLine10" parent="." instance=ExtResource( 8 )]
+position = Vector2( -696, 5568 )
+Peds = ExtResource( 5 )
+
+[node name="PedLine9" parent="." instance=ExtResource( 8 )]
+position = Vector2( -32, 5096 )
+rotation = 1.5708
+Peds = ExtResource( 5 )
+
+[node name="PedLine6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2328, 4088 )
+rotation = 3.14159
+Peds = ExtResource( 5 )
+
+[node name="CarLine" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4824, 1408 )
+rotation = 1.5708
+
+[node name="Car" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1408, 2320 )
+rotation = 4.66003
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car2" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1400, 1920 )
+rotation = 4.71239
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car3" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1400, 1448 )
+rotation = 4.7473
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car4" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1416, 1008 )
+rotation = 4.88692
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car5" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1424, 437.671 )
+rotation = 4.36332
+mode = 1
+min_speed = 0
+max_speed = 0
+
+[node name="Car6" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1464, 2.70755 )
+rotation = 4.62512
+mode = 1
+min_speed = 0
+max_speed = 0
 
 [node name="DirectionTrigger1" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1376, -704 )
-[connection signal="timeout" from="PedSpawner/PedTimer" to="." method="_on_PedTimer_timeout"]
+position = Vector2( 1424, 1080 )
+
+[node name="DirectionTrigger2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3440, 1344 )
+
+[node name="DirectionTrigger3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 42, 3694 )
+
+[node name="Wall" parent="." instance=ExtResource( 6 )]
+position = Vector2( 396.97, -524.603 )
+
+[node name="Wall8" parent="." instance=ExtResource( 6 )]
+position = Vector2( -456, 1776 )
+
+[node name="Wall2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -474.136, 360.672 )
+
+[node name="Wall3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1283.08, 353.083 )
+
+[node name="Wall4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2152, 1792 )
+
+[node name="Wall5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 712, 2960 )
+
+[node name="Wall6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 711.737, 1790.23 )
+
+[node name="Wall7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1888, 3224 )
+
+[node name="Wall9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3056, 3224 )
+
+[node name="Wall20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3568, 3224 )
+
+[node name="Wall21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3712, 3344 )
+
+[node name="Wall10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3576, 2056 )
+
+[node name="Wall11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2742, 624 )
+
+[node name="Wall34" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2296, -632 )
+
+[node name="Wall35" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3552, -616 )
+
+[node name="Wall36" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4720, -504 )
+
+[node name="Wall37" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3040, -1832 )
+
+[node name="Wall38" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2296, -1328 )
+
+[node name="Wall12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4168, 638 )
+
+[node name="Wall13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 6464, 1256 )
+
+[node name="Wall19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5304, 640 )
+
+[node name="Wall14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 6472, 2424 )
+
+[node name="Wall15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 6480, 3592 )
+
+[node name="Wall16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 6504, 4744 )
+
+[node name="Wall17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5312, 4744 )
+
+[node name="Wall18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4144, 4752 )
+
+[node name="Wall22" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2986, 4608 )
+
+[node name="Wall23" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1816, 4760 )
+
+[node name="Wall24" parent="." instance=ExtResource( 6 )]
+position = Vector2( 632, 4760 )
+
+[node name="Wall25" parent="." instance=ExtResource( 6 )]
+position = Vector2( 96, 4416 )
+
+[node name="Wall39" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1344, 4280 )
+
+[node name="Wall40" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1358, 4280 )
+
+[node name="Wall41" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1358, 5440 )
+
+[node name="Wall42" parent="." instance=ExtResource( 6 )]
+position = Vector2( -192, 6240 )
+
+[node name="Wall43" parent="." instance=ExtResource( 6 )]
+position = Vector2( 968, 6264 )
+
+[node name="Wall44" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2128, 6264 )
+
+[node name="Wall45" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3312, 6256 )
+
+[node name="Wall46" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4480, 6256 )
+
+[node name="Wall47" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5648, 6256 )
+
+[node name="Wall48" parent="." instance=ExtResource( 6 )]
+position = Vector2( 6808, 6248 )
+
+[node name="Wall49" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7536, 5360 )
+
+[node name="Wall26" parent="." instance=ExtResource( 6 )]
+position = Vector2( -640, 3104 )
+
+[node name="Wall27" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1792, 3104 )
+
+[node name="Wall28" parent="." instance=ExtResource( 6 )]
+position = Vector2( -2640, 1928 )
+
+[node name="Wall29" parent="." instance=ExtResource( 6 )]
+position = Vector2( -2648, 760 )
+
+[node name="Wall30" parent="." instance=ExtResource( 6 )]
+position = Vector2( -2664, -416 )
+
+[node name="Wall31" parent="." instance=ExtResource( 6 )]
+position = Vector2( -768, -768 )
+
+[node name="Wall33" parent="." instance=ExtResource( 6 )]
+position = Vector2( -768, -768 )
+
+[node name="Wall32" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1744, -984 )
 [connection signal="ded" from="HUD" to="." method="_on_HUD_ded"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="crash" from="Player" to="." method="_on_Player_crash"]
+[connection signal="win" from="Player" to="." method="_on_Player_win"]
 [connection signal="area_entered" from="DirectionTrigger1" to="HUD" method="_on_DirectionTrigger1_area_entered"]
+[connection signal="area_entered" from="DirectionTrigger2" to="HUD" method="_on_DirectionTrigger2_area_entered"]
+[connection signal="area_entered" from="DirectionTrigger3" to="HUD" method="_on_DirectionTrigger3_area_entered"]

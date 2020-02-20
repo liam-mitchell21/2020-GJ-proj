@@ -4,7 +4,7 @@
 [ext_resource path="res://sprites/player1_1.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 27.0022
 height = 14.1123
 
@@ -21,7 +21,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 27.3044
 height = 13.4234
 
@@ -30,7 +30,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.12, 0.12 )
@@ -50,5 +50,6 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Phitbox"]
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="Phitbox" to="." method="_on_Phitbox_area_entered"]
 [connection signal="body_entered" from="Phitbox" to="." method="_on_Phitbox_body_entered"]

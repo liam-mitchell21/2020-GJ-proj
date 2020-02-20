@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 signal hit
 var screen_size  # Size of the game window.
+signal crash
+signal win
 
 export (int) var speed = 300
 
@@ -46,7 +48,14 @@ func start(pos):
 	show()
 
 func _on_Phitbox_body_entered(body):
-		#print(body.get_name())
+	#print(body.get_name())
 	if "Peds" in body.get_name():
 		emit_signal("hit")
 		$Slowtimer.start()
+	if "Car" in body.get_name():
+		emit_signal("crash")
+		$Slowtimer.start()
+
+func _on_Phitbox_area_entered(area):
+	if "Work" in area.get_name():
+		emit_signal("win")

@@ -14,15 +14,15 @@ animations = [ {
 "name": "med",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "slow",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "fast",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "slow",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]

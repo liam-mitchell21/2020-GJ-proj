@@ -50,4 +50,14 @@ func new_message(text, r1, r2, r3): #eugh duplicating the func
 func _on_DirectionTrigger1_area_entered(area):
 	if (area.get_name() == "Phitbox"):
 		$PHONE/MessageTimer.start()
-		new_message("GO LEFT", "Who are you", "Why", "OK")
+		new_message("GO SOUTH", "Who are you", "Why", "OK")
+
+func _on_DirectionTrigger2_area_entered(area):
+	if (area.get_name() == "Phitbox"):
+		$PHONE/MessageTimer.start()
+		new_message("GO EAST", "How did you get this #", "...", "OK")
+
+func _on_DirectionTrigger3_area_entered(area):
+	if (area.get_name() == "Phitbox"):
+		$PHONE/MessageTimer.start()
+		new_message("GO NORTH", "...", "...", "OK")
