@@ -1,7 +1,7 @@
 extends Sprite
 
 var masterlist = "res://texts/master-texts.csv"
-var totalcount = 0
+var totalcount = 1
 var shuff = [1]
 var shuffdex = 0
 var file = ""
